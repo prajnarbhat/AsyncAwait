@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <title>Async  functionality2 with callback</title>
+    </head>
+    <body>
+    
+        <script>
+            
+        //using asyn await and fetching api
+
+        async function getInfoFromgit(){
+            const res=await fetch('https://api.github.com/users/andrew')
+
+            //we need to get json data and need to run the data
+            //we need to use await before getting json data
+            //before fetch also we need to use await
+
+            const profile=await res.json()
+            console.log(profile)
+        }
+        getInfoFromgit()
+        </script>
+
+        
+    </body>
+</html>

@@ -1,0 +1,40 @@
+<html>
+    <head>
+        <title>Async  functionality2 with callback</title>
+    </head>
+    <body>
+        <script>
+            console.log("before")
+
+            //calling fetchuser by passing userId and passing another function
+
+            fetchUser(12345,function(user){
+                console.log(user)
+            })
+            //inside setTimeout we pass function and timer
+            //after 2 sed console message is displayed
+            //inside function we have used userId and callbacks
+            function fetchUser(userId,callback){
+                setTimeout(function(){
+                const fetchedUser={
+                    id:userId,
+                    name:'Prajna',
+                    email:'rbhatprajna@gmail.com'
+                };
+                //here we used an object to get userId,name,email
+                //and we used thet techedUser inside the callback function
+                callback(fetchedUser)
+            },2000)
+            }
+
+            //call the method
+            //here we are not getting name and age present in return method we have to call back methods or promise to get the name and ag present in return
+
+            //use callback
+
+            //here we have used callback to call the method or object name which is return id,name,email then call that function by inputing userid and function
+            
+            console.log("After")
+        </script>
+    </body>
+</html>

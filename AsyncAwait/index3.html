@@ -1,0 +1,48 @@
+<html>
+    <head>
+        <title>Async  functionality2 with callback</title>
+    </head>
+    <body>
+    
+        <script>
+            
+            console.log("before")
+
+
+            fetchUser(12345,function(user){
+                //console.log(user)
+                sendMail(user.email,function(response){
+                    console.log(response.success)
+                })
+            })
+
+            
+            
+
+            function sendMail(userEmail,callback){
+                
+                setTimeout(function(){
+                    console.log("message sending")
+                        const response = {success:true};
+                        //when email sent it showsa sstatus as success
+                    
+                        callback(response);
+                    },2000)
+
+            
+        }
+         function fetchUser(userId,callback){
+                setTimeout(function(){
+                const fetchedUser={
+                    id:userId,
+                    name:'Prajna',
+                    email:'rbhatprajna@gmail.com'
+                };
+                //here we used an object to get userId,name,email
+                //and we used thet techedUser inside the callback function
+                callback(fetchedUser)
+            },2000)
+            }
+        </script>
+    </body>
+</html>

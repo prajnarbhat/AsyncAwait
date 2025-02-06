@@ -1,0 +1,45 @@
+<html>
+    <head>
+        <title>Async  functionality2 with callback</title>
+    </head>
+    <body>
+    
+        <script>
+            
+            setTimeout(function(){
+                console.log("hi prajna")
+            },2000)
+            //display promise
+            //pas two paramaeter resolve and reject
+
+        const promise=new Promise(function(resolve,reject){
+            //resolve work ehen we get data from database resolve will work
+            //if we have any error in data we use reject
+            setTimeout(()=>{
+                //getting data
+               // resolve(1)
+                //after 3 sec we get this data
+                //if we have any error in getting that data
+                reject(new Error("Hi there is some error"))
+            },2000)
+        })
+
+        //display our promise
+        console.log(promise)
+
+        //it give a promise as pending so resolve this pending promise issue
+        //for thatwe use then function
+        //with this then function,here we load this then
+        //to get the data 1 we use then with this promise
+        //for reject we use catch method
+
+        promise.then(function(result){
+            console.log(result)
+        }).catch(function(error){
+            console.log(error.message)
+        })
+        </script>
+
+        
+    </body>
+</html>

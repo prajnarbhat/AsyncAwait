@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <title>Async  functionality</title>
+    </head>
+    <body>
+        <script>
+            console.log("before")
+            //inside setTimeout we pass function and timer
+            //after 2 sed console message is displayed
+            function fetchUser(){
+                setTimeout(function(){
+                console.log("Hi my name is Prajna")
+                //returning name and age
+                return{
+                    name:'Prajna',
+                    age:20,
+                }
+            },2000)
+            }
+
+            //call the method
+            //here we are not getting name and age present in return method we have to call back methods or promise to get the name and ag present in return
+
+            //use callback
+            const user=fetchUser()
+            console.log(user)
+            
+            console.log("After")
+        </script>
+    </body>
+</html>
